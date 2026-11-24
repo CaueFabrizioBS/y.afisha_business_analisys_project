@@ -1,0 +1,16 @@
+{
+  "code": "def clean_orders(orders: pd.DataFrame, cutoff_date: str) -> pd.DataFrame:\n    orders = orders.copy()\n    orders.columns = orders.columns.str.lower().str.replace(' ', '_')\n\n    # Orders after the period of the visits and costs are left out\n    return orders[orders['buy_ts'] < cutoff_date]\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/data_processing/nodes.py",
+  "parameters": {
+    "cutoff_date": "2018-06-01"
+  },
+  "run_command": "kedro run --to-nodes='clean_orders'",
+  "inputs": [
+    "orders_raw",
+    "params:cutoff_date"
+  ],
+  "outputs": [
+    "orders_clean"
+  ],
+  "preview": null
+}

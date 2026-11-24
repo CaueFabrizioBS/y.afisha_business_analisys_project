@@ -1,0 +1,13 @@
+{
+  "code": "def audience_metrics(visits: pd.DataFrame) -> pd.DataFrame:\n    visits = visits.copy()\n    visits['session_date'] = visits['start_ts'].dt.date\n    visits['session_year'] = visits['start_ts'].dt.isocalendar().year\n    visits['session_week'] = visits['start_ts'].dt.isocalendar().week\n    visits['session_month'] = visits['start_ts'].dt.to_period('M')\n\n    dau = visits.groupby('session_date')['uid'].nunique().mean()\n    wau = visits.groupby(['session_year', 'session_week'])['uid'].nunique().mean()\n    mau = visits.groupby('session_month')['uid'].nunique().mean()\n\n    sessions_per_day = visits.groupby('session_date').agg(n_sessions=('uid', 'count'), n_users=('uid', 'nunique'))\n\n    # Zero-second sessions are left out of the session length\n    durations = visits.loc[visits['session_duration_sec'] > 0, 'session_duration_sec']\n\n    return pd.DataFrame({\n        'metric': [\n            'dau', 'wau', 'mau', 'sticky_factor_week', 'sticky_factor_month',\n            'sessions_per_user_per_day', 'session_mean_sec', 'session_median_sec', 'session_mode_sec',\n        ],\n        'value': [\n            dau, wau, mau, dau / wau, dau / mau,\n            (sessions_per_day['n_sessions'] / sessions_per_day['n_users']).mean(),\n            durations.mean(), durations.median(), durations.mode()[0],\n        ],\n    }).round(3)\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/product/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='audience_metrics'",
+  "inputs": [
+    "visits_clean"
+  ],
+  "outputs": [
+    "product_metrics"
+  ],
+  "preview": null
+}

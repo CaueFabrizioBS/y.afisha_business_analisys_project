@@ -1,0 +1,390 @@
+{
+  "nodes": [
+    {
+      "id": "c904099c",
+      "name": "buyers",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 36522,
+          "columns": 7,
+          "file_size": 2837114
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "c4fe211b",
+      "name": "order_cohorts",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 78,
+          "columns": 5,
+          "file_size": 2155
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "43b053c9",
+      "name": "cac_by_source",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 8,
+          "columns": 3,
+          "file_size": 185
+        },
+        "styles": null
+      },
+      "parameters": {},
+      "full_name": "cac_by_source"
+    },
+    {
+      "id": "f764538e",
+      "name": "costs_raw",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 2542,
+          "columns": 3,
+          "file_size": 49258
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "84e57b01",
+      "name": "cac_by_source",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 8,
+          "columns": 3,
+          "file_size": 185
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "29d33c7a",
+      "name": "device_revenue_test",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 1,
+          "columns": 5,
+          "file_size": 116
+        },
+        "styles": null
+      },
+      "parameters": {
+        "alpha": 0.05
+      },
+      "full_name": "device_revenue_test"
+    },
+    {
+      "id": "b9e49ae5",
+      "name": "params:alpha",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "layer": null,
+      "dataset_type": null
+    },
+    {
+      "id": "adf3e297",
+      "name": "device_revenue_test",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 1,
+          "columns": 5,
+          "file_size": 116
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "0446e1e5",
+      "name": "romi_by_cohort",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 12,
+          "columns": 12,
+          "file_size": 585
+        },
+        "styles": null
+      },
+      "parameters": {},
+      "full_name": "romi_by_cohort"
+    },
+    {
+      "id": "e20f4c88",
+      "name": "romi_by_cohort",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 12,
+          "columns": 12,
+          "file_size": 585
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "30ad60b4",
+      "name": "romi_by_source",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 8,
+          "columns": 3,
+          "file_size": 207
+        },
+        "styles": null
+      },
+      "parameters": {},
+      "full_name": "romi_by_source"
+    },
+    {
+      "id": "90055bb0",
+      "name": "romi_by_source",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 8,
+          "columns": 3,
+          "file_size": 207
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    }
+  ],
+  "edges": [
+    {
+      "source": "c904099c",
+      "target": "43b053c9"
+    },
+    {
+      "source": "b9e49ae5",
+      "target": "29d33c7a"
+    },
+    {
+      "source": "c904099c",
+      "target": "30ad60b4"
+    },
+    {
+      "source": "29d33c7a",
+      "target": "adf3e297"
+    },
+    {
+      "source": "f764538e",
+      "target": "0446e1e5"
+    },
+    {
+      "source": "0446e1e5",
+      "target": "e20f4c88"
+    },
+    {
+      "source": "30ad60b4",
+      "target": "90055bb0"
+    },
+    {
+      "source": "f764538e",
+      "target": "43b053c9"
+    },
+    {
+      "source": "43b053c9",
+      "target": "84e57b01"
+    },
+    {
+      "source": "c904099c",
+      "target": "29d33c7a"
+    },
+    {
+      "source": "f764538e",
+      "target": "30ad60b4"
+    },
+    {
+      "source": "c4fe211b",
+      "target": "0446e1e5"
+    }
+  ],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "data_processing",
+      "name": "data_processing"
+    },
+    {
+      "id": "marketing",
+      "name": "marketing"
+    },
+    {
+      "id": "product",
+      "name": "product"
+    },
+    {
+      "id": "sales",
+      "name": "sales"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "30ad60b4",
+          "type": "task"
+        },
+        {
+          "id": "c4fe211b",
+          "type": "data"
+        },
+        {
+          "id": "43b053c9",
+          "type": "task"
+        },
+        {
+          "id": "c904099c",
+          "type": "data"
+        },
+        {
+          "id": "b9e49ae5",
+          "type": "parameters"
+        },
+        {
+          "id": "84e57b01",
+          "type": "data"
+        },
+        {
+          "id": "e20f4c88",
+          "type": "data"
+        },
+        {
+          "id": "f764538e",
+          "type": "data"
+        },
+        {
+          "id": "adf3e297",
+          "type": "data"
+        },
+        {
+          "id": "0446e1e5",
+          "type": "task"
+        },
+        {
+          "id": "90055bb0",
+          "type": "data"
+        },
+        {
+          "id": "29d33c7a",
+          "type": "task"
+        },
+        {
+          "id": "b9e49ae5",
+          "type": "data"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "marketing"
+}

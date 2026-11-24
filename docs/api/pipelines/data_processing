@@ -1,0 +1,224 @@
+{
+  "nodes": [
+    {
+      "id": "7685b2e1",
+      "name": "clean_orders",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {
+        "cutoff_date": "2018-06-01"
+      },
+      "full_name": "clean_orders"
+    },
+    {
+      "id": "8db6e878",
+      "name": "orders_raw",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 50415,
+          "columns": 3,
+          "file_size": 2287508
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "09ee0f6f",
+      "name": "params:cutoff_date",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "parameters",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "layer": null,
+      "dataset_type": null
+    },
+    {
+      "id": "41ad8e34",
+      "name": "orders_clean",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing",
+        "sales"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 50414,
+          "columns": 3,
+          "file_size": 2287465
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "64b5c5d5",
+      "name": "clean_visits",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {},
+      "full_name": "clean_visits"
+    },
+    {
+      "id": "f9a2bad6",
+      "name": "visits_raw",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 359400,
+          "columns": 5,
+          "file_size": 25117663
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "ce0f119c",
+      "name": "visits_clean",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing",
+        "product",
+        "sales"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 359398,
+          "columns": 6,
+          "file_size": 27224267
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    }
+  ],
+  "edges": [
+    {
+      "source": "64b5c5d5",
+      "target": "ce0f119c"
+    },
+    {
+      "source": "f9a2bad6",
+      "target": "64b5c5d5"
+    },
+    {
+      "source": "09ee0f6f",
+      "target": "7685b2e1"
+    },
+    {
+      "source": "7685b2e1",
+      "target": "41ad8e34"
+    },
+    {
+      "source": "8db6e878",
+      "target": "7685b2e1"
+    }
+  ],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "data_processing",
+      "name": "data_processing"
+    },
+    {
+      "id": "marketing",
+      "name": "marketing"
+    },
+    {
+      "id": "product",
+      "name": "product"
+    },
+    {
+      "id": "sales",
+      "name": "sales"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "41ad8e34",
+          "type": "data"
+        },
+        {
+          "id": "ce0f119c",
+          "type": "data"
+        },
+        {
+          "id": "09ee0f6f",
+          "type": "data"
+        },
+        {
+          "id": "8db6e878",
+          "type": "data"
+        },
+        {
+          "id": "7685b2e1",
+          "type": "task"
+        },
+        {
+          "id": "f9a2bad6",
+          "type": "data"
+        },
+        {
+          "id": "09ee0f6f",
+          "type": "parameters"
+        },
+        {
+          "id": "64b5c5d5",
+          "type": "task"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "data_processing"
+}

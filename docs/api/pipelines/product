@@ -1,0 +1,170 @@
+{
+  "nodes": [
+    {
+      "id": "ce0f119c",
+      "name": "visits_clean",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing",
+        "product",
+        "sales"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 359398,
+          "columns": 6,
+          "file_size": 27224267
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "bf654662",
+      "name": "audience_metrics",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "product"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {},
+      "full_name": "audience_metrics"
+    },
+    {
+      "id": "c4248103",
+      "name": "product_metrics",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "product"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 9,
+          "columns": 2,
+          "file_size": 206
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "8d206ac4",
+      "name": "retention_by_cohort",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "product"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {},
+      "full_name": "retention_by_cohort"
+    },
+    {
+      "id": "31e69adf",
+      "name": "retention",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "product"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 12,
+          "columns": 12,
+          "file_size": 702
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    }
+  ],
+  "edges": [
+    {
+      "source": "bf654662",
+      "target": "c4248103"
+    },
+    {
+      "source": "ce0f119c",
+      "target": "bf654662"
+    },
+    {
+      "source": "ce0f119c",
+      "target": "8d206ac4"
+    },
+    {
+      "source": "8d206ac4",
+      "target": "31e69adf"
+    }
+  ],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "data_processing",
+      "name": "data_processing"
+    },
+    {
+      "id": "marketing",
+      "name": "marketing"
+    },
+    {
+      "id": "product",
+      "name": "product"
+    },
+    {
+      "id": "sales",
+      "name": "sales"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "ce0f119c",
+          "type": "data"
+        },
+        {
+          "id": "31e69adf",
+          "type": "data"
+        },
+        {
+          "id": "bf654662",
+          "type": "task"
+        },
+        {
+          "id": "c4248103",
+          "type": "data"
+        },
+        {
+          "id": "8d206ac4",
+          "type": "task"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "product"
+}

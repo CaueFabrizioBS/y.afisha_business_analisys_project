@@ -1,0 +1,14 @@
+{
+  "code": "def romi_by_source(costs: pd.DataFrame, buyers: pd.DataFrame) -> pd.DataFrame:\n    romi = pd.DataFrame({\n        'revenue': buyers.groupby('source_id')['revenue'].sum(),\n        'costs': costs.groupby('source_id')['costs'].sum(),\n    })\n    romi['romi'] = romi['revenue'] / romi['costs']\n    return romi.sort_values('romi').round(2)\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/marketing/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='romi_by_source'",
+  "inputs": [
+    "costs_raw",
+    "buyers"
+  ],
+  "outputs": [
+    "romi_by_source"
+  ],
+  "preview": null
+}

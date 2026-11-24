@@ -1,0 +1,10 @@
+metric,value
+dau,907.992
+wau,5716.245
+mau,23228.417
+sticky_factor_week,0.159
+sticky_factor_month,0.039
+sessions_per_user_per_day,1.082
+session_mean_sec,714.17
+session_median_sec,360.0
+session_mode_sec,60.0

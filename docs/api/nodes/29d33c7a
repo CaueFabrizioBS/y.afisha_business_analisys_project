@@ -1,0 +1,16 @@
+{
+  "code": "def device_revenue_test(buyers: pd.DataFrame, alpha: float) -> pd.DataFrame:\n    desktop_revenue = buyers[buyers['device'] == 'desktop']['revenue']\n    touch_revenue = buyers[buyers['device'] == 'touch']['revenue']\n\n    # Levene passes, but the variances are about 13 times apart (big orders on desktop),\n    # so Welch's t-test (equal_var=False) is the safer choice\n    levene_pvalue = st.levene(desktop_revenue, touch_revenue).pvalue\n    ttest_pvalue = st.ttest_ind(desktop_revenue, touch_revenue, equal_var=False).pvalue\n\n    return pd.DataFrame({\n        'desktop_mean': [desktop_revenue.mean()],\n        'touch_mean': [touch_revenue.mean()],\n        'levene_pvalue': [levene_pvalue],\n        'ttest_pvalue': [ttest_pvalue],\n        'result': ['We reject the null hypothesis' if ttest_pvalue < alpha else 'We cannot reject the null hypothesis'],\n    }).round(4)\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/marketing/nodes.py",
+  "parameters": {
+    "alpha": 0.05
+  },
+  "run_command": "kedro run --to-nodes='device_revenue_test'",
+  "inputs": [
+    "buyers",
+    "params:alpha"
+  ],
+  "outputs": [
+    "device_revenue_test"
+  ],
+  "preview": null
+}

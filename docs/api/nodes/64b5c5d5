@@ -1,0 +1,13 @@
+{
+  "code": "def clean_visits(visits: pd.DataFrame) -> pd.DataFrame:\n    visits = visits.copy()\n    visits.columns = visits.columns.str.lower().str.replace(' ', '_')\n    visits['session_duration_sec'] = (visits['end_ts'] - visits['start_ts']).dt.total_seconds()\n\n    # Sessions that end before they start are errors in the record\n    return visits[visits['session_duration_sec'] >= 0]\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/data_processing/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='clean_visits'",
+  "inputs": [
+    "visits_raw"
+  ],
+  "outputs": [
+    "visits_clean"
+  ],
+  "preview": null
+}

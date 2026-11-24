@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "y_afisha"
+version = "0.1.0"
+description = "Marketing analysis for Y.Afisha: product, sales and marketing metrics"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.kedro]
+package_name = "y_afisha"
+project_name = "Y.Afisha"
+kedro_init_version = "1.8.0"
+source_dir = "src"
+
+[tool.kedro_telemetry]
+project_id = "15fbaab3d3db4800a2c5c67a5c83154f"

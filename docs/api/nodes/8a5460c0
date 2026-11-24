@@ -1,0 +1,13 @@
+{
+  "code": "def conversion_share(buyers: pd.DataFrame) -> pd.DataFrame:\n    groups = pd.cut(\n        buyers['days_to_buy'],\n        bins=[-1, 0, 1, 7, 30, 365],\n        labels=['0d', '1d', '2-7d', '8-30d', 'more than 30d'],\n    )\n    return groups.value_counts(normalize=True).sort_index().round(4).rename('share').reset_index()\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/sales/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='conversion_share'",
+  "inputs": [
+    "buyers"
+  ],
+  "outputs": [
+    "conversion"
+  ],
+  "preview": null
+}

@@ -1,0 +1,304 @@
+{
+  "nodes": [
+    {
+      "id": "41ad8e34",
+      "name": "orders_clean",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing",
+        "sales"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 50414,
+          "columns": 3,
+          "file_size": 2287465
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "ce0f119c",
+      "name": "visits_clean",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "data_processing",
+        "product",
+        "sales"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 359398,
+          "columns": 6,
+          "file_size": 27224267
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "bd02af53",
+      "name": "build_buyers",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {},
+      "full_name": "build_buyers"
+    },
+    {
+      "id": "c904099c",
+      "name": "buyers",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 36522,
+          "columns": 7,
+          "file_size": 2837114
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "b5e458a0",
+      "name": "build_order_cohorts",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {},
+      "full_name": "build_order_cohorts"
+    },
+    {
+      "id": "c4fe211b",
+      "name": "order_cohorts",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales",
+        "marketing"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 78,
+          "columns": 5,
+          "file_size": 2155
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "8a5460c0",
+      "name": "conversion_share",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {},
+      "full_name": "conversion_share"
+    },
+    {
+      "id": "21faa67d",
+      "name": "conversion",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 5,
+          "columns": 2,
+          "file_size": 84
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    },
+    {
+      "id": "754de81b",
+      "name": "ltv_by_cohort",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales"
+      ],
+      "type": "task",
+      "modular_pipelines": null,
+      "node_extras": null,
+      "parameters": {},
+      "full_name": "ltv_by_cohort"
+    },
+    {
+      "id": "5088db2d",
+      "name": "ltv",
+      "tags": [],
+      "pipelines": [
+        "__default__",
+        "sales"
+      ],
+      "type": "data",
+      "modular_pipelines": null,
+      "node_extras": {
+        "stats": {
+          "rows": 12,
+          "columns": 12,
+          "file_size": 599
+        },
+        "styles": null
+      },
+      "layer": null,
+      "dataset_type": "pandas.csv_dataset.CSVDataset"
+    }
+  ],
+  "edges": [
+    {
+      "source": "8a5460c0",
+      "target": "21faa67d"
+    },
+    {
+      "source": "754de81b",
+      "target": "5088db2d"
+    },
+    {
+      "source": "bd02af53",
+      "target": "c904099c"
+    },
+    {
+      "source": "ce0f119c",
+      "target": "bd02af53"
+    },
+    {
+      "source": "c4fe211b",
+      "target": "754de81b"
+    },
+    {
+      "source": "41ad8e34",
+      "target": "bd02af53"
+    },
+    {
+      "source": "b5e458a0",
+      "target": "c4fe211b"
+    },
+    {
+      "source": "c904099c",
+      "target": "8a5460c0"
+    },
+    {
+      "source": "41ad8e34",
+      "target": "b5e458a0"
+    }
+  ],
+  "layers": [],
+  "tags": [],
+  "pipelines": [
+    {
+      "id": "__default__",
+      "name": "__default__"
+    },
+    {
+      "id": "data_processing",
+      "name": "data_processing"
+    },
+    {
+      "id": "marketing",
+      "name": "marketing"
+    },
+    {
+      "id": "product",
+      "name": "product"
+    },
+    {
+      "id": "sales",
+      "name": "sales"
+    }
+  ],
+  "modular_pipelines": {
+    "__root__": {
+      "id": "__root__",
+      "name": "__root__",
+      "inputs": [],
+      "outputs": [],
+      "children": [
+        {
+          "id": "41ad8e34",
+          "type": "data"
+        },
+        {
+          "id": "c904099c",
+          "type": "data"
+        },
+        {
+          "id": "ce0f119c",
+          "type": "data"
+        },
+        {
+          "id": "b5e458a0",
+          "type": "task"
+        },
+        {
+          "id": "8a5460c0",
+          "type": "task"
+        },
+        {
+          "id": "754de81b",
+          "type": "task"
+        },
+        {
+          "id": "21faa67d",
+          "type": "data"
+        },
+        {
+          "id": "bd02af53",
+          "type": "task"
+        },
+        {
+          "id": "5088db2d",
+          "type": "data"
+        },
+        {
+          "id": "c4fe211b",
+          "type": "data"
+        }
+      ]
+    }
+  },
+  "selected_pipeline": "sales"
+}

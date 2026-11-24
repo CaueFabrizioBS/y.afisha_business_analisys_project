@@ -1,0 +1,13 @@
+{
+  "code": "def ltv_by_cohort(cohorts: pd.DataFrame) -> pd.DataFrame:\n    # The revenue is taken as Y.Afisha's own money, so the margin is 100%\n    cohorts = cohorts.copy()\n    cohorts['ltv'] = cohorts['revenue'] / cohorts['n_buyers']\n    return cohorts.pivot_table(index='first_order_month', columns='age', values='ltv').cumsum(axis=1).round(2)\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/sales/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='ltv_by_cohort'",
+  "inputs": [
+    "order_cohorts"
+  ],
+  "outputs": [
+    "ltv"
+  ],
+  "preview": null
+}

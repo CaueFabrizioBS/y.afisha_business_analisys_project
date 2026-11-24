@@ -221,3 +221,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# TripleTen version of the notebook (kept local, not pushed to GitHub)
+tripleten/
+
+# Kedro: local settings and data made by the pipelines
+conf/local/**
+!conf/local/.gitkeep
+data/02_intermediate/*
+data/03_primary/*
+!data/**/.gitkeep

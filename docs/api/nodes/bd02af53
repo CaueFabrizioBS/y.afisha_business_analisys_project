@@ -1,0 +1,14 @@
+{
+  "code": "def build_buyers(visits: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:\n    # Device and source of the first visit: how the customer arrived at the site\n    first_visits = (\n        visits.sort_values('start_ts')\n        .groupby('uid')\n        .first()[['start_ts', 'device', 'source_id']]\n        .rename(columns={'start_ts': 'first_visit'})\n    )\n    customers = orders.groupby('uid').agg(first_order=('buy_ts', 'min'), revenue=('revenue', 'sum'))\n\n    buyers = first_visits.join(customers, how='inner')\n    # Calendar days: an order on the day after the first visit counts as 1 day, even if less than 24 hours passed\n    buyers['days_to_buy'] = (buyers['first_order'].dt.normalize() - buyers['first_visit'].dt.normalize()).dt.days\n    return buyers.reset_index()\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/sales/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='build_buyers'",
+  "inputs": [
+    "visits_clean",
+    "orders_clean"
+  ],
+  "outputs": [
+    "buyers"
+  ],
+  "preview": null
+}

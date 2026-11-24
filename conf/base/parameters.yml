@@ -1,0 +1,5 @@
+# Orders from this date on are outside the period of the visits and costs
+cutoff_date: "2018-06-01"
+
+# Significance level of the hypothesis test
+alpha: 0.05

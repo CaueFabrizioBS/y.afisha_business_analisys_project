@@ -1,0 +1,12 @@
+# Python 3.12 or newer (versions match the local Anaconda environment, Python 3.14)
+pandas==3.0.6
+numpy==2.4.6
+scipy==1.18.0
+matplotlib==3.11.0
+seaborn==0.13.2
+
+# Kedro pipeline
+kedro==1.8.0
+kedro-datasets[pandas-csvdataset]==10.0.0
+kedro-viz==12.6.0
+

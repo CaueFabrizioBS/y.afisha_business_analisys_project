@@ -1,0 +1,12 @@
+{
+  "type": "pandas.csv_dataset.CSVDataset",
+  "filepath": "/sessions/rcw-01rspvruwhparkszfsqk1cta/mnt/y.afisha_business_analisys_project/data/02_intermediate/orders_clean.csv",
+  "run_command": "kedro run --to-outputs=orders_clean",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 50414,
+    "columns": 3,
+    "file_size": 2287465
+  }
+}

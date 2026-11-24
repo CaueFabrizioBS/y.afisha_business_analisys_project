@@ -1,0 +1,13 @@
+{
+  "code": "def retention_by_cohort(visits: pd.DataFrame) -> pd.DataFrame:\n    visits = visits.copy()\n    visits['session_month'] = visits['start_ts'].dt.to_period('M')\n    visits['first_month'] = visits.groupby('uid')['session_month'].transform('min')\n    visits['lifetime'] = (\n        (visits['session_month'].dt.year - visits['first_month'].dt.year) * 12\n        + (visits['session_month'].dt.month - visits['first_month'].dt.month)\n    )\n\n    cohorts = visits.groupby(['first_month', 'lifetime'])['uid'].nunique().reset_index()\n    cohorts['cohort_users'] = cohorts.groupby('first_month')['uid'].transform('first')\n    cohorts['retention'] = cohorts['uid'] / cohorts['cohort_users']\n\n    return cohorts.pivot_table(index='first_month', columns='lifetime', values='retention').round(4)\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/product/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='retention_by_cohort'",
+  "inputs": [
+    "visits_clean"
+  ],
+  "outputs": [
+    "retention"
+  ],
+  "preview": null
+}

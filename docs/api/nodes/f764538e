@@ -1,0 +1,12 @@
+{
+  "type": "pandas.csv_dataset.CSVDataset",
+  "filepath": "/sessions/rcw-01rspvruwhparkszfsqk1cta/mnt/y.afisha_business_analisys_project/data/01_raw/costs_us.csv",
+  "run_command": null,
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 2542,
+    "columns": 3,
+    "file_size": 49258
+  }
+}

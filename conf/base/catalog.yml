@@ -1,0 +1,101 @@
+# Raw data
+visits_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/visits_log_us.csv
+  load_args:
+    dtype:
+      Device: category
+    parse_dates: [Start Ts, End Ts]
+
+orders_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/orders_log_us.csv
+  load_args:
+    parse_dates: [Buy Ts]
+
+costs_raw:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/costs_us.csv
+  load_args:
+    parse_dates: [dt]
+
+# Clean data
+visits_clean:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/visits_clean.csv
+  load_args:
+    parse_dates: [start_ts, end_ts]
+  save_args:
+    index: False
+
+orders_clean:
+  type: pandas.CSVDataset
+  filepath: data/02_intermediate/orders_clean.csv
+  load_args:
+    parse_dates: [buy_ts]
+  save_args:
+    index: False
+
+# Tables used by more than one pipeline
+buyers:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/buyers.csv
+  load_args:
+    parse_dates: [first_visit, first_order]
+  save_args:
+    index: False
+
+order_cohorts:
+  type: pandas.CSVDataset
+  filepath: data/03_primary/order_cohorts.csv
+  save_args:
+    index: False
+
+# Results
+product_metrics:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/product_metrics.csv
+  save_args:
+    index: False
+
+retention:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/retention.csv
+  save_args:
+    index: True
+
+conversion:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/conversion.csv
+  save_args:
+    index: False
+
+ltv:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/ltv.csv
+  save_args:
+    index: True
+
+cac_by_source:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/cac_by_source.csv
+  save_args:
+    index: True
+
+romi_by_cohort:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/romi_by_cohort.csv
+  save_args:
+    index: True
+
+romi_by_source:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/romi_by_source.csv
+  save_args:
+    index: True
+
+device_revenue_test:
+  type: pandas.CSVDataset
+  filepath: data/08_reporting/device_revenue_test.csv
+  save_args:
+    index: False

@@ -1,0 +1,13 @@
+{
+  "code": "def build_order_cohorts(orders: pd.DataFrame) -> pd.DataFrame:\n    orders = orders.copy()\n    orders['order_month'] = orders['buy_ts'].dt.to_period('M')\n    orders['first_order_month'] = orders.groupby('uid')['order_month'].transform('min')\n    orders['age'] = (\n        (orders['order_month'].dt.year - orders['first_order_month'].dt.year) * 12\n        + (orders['order_month'].dt.month - orders['first_order_month'].dt.month)\n    )\n\n    cohorts = (\n        orders.groupby(['first_order_month', 'age'])\n        .agg(n_orders=('uid', 'count'), revenue=('revenue', 'sum'))\n        .reset_index()\n    )\n    cohorts['n_buyers'] = cohorts['first_order_month'].map(orders.groupby('first_order_month')['uid'].nunique())\n    cohorts['first_order_month'] = cohorts['first_order_month'].astype(str)\n    return cohorts\n",
+  "filepath": "y.afisha_business_analisys_project/src/y_afisha/pipelines/sales/nodes.py",
+  "parameters": {},
+  "run_command": "kedro run --to-nodes='build_order_cohorts'",
+  "inputs": [
+    "orders_clean"
+  ],
+  "outputs": [
+    "order_cohorts"
+  ],
+  "preview": null
+}

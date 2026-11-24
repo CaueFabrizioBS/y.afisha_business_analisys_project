@@ -1,0 +1,12 @@
+{
+  "type": "pandas.csv_dataset.CSVDataset",
+  "filepath": "/sessions/rcw-01rspvruwhparkszfsqk1cta/mnt/y.afisha_business_analisys_project/data/03_primary/order_cohorts.csv",
+  "run_command": "kedro run --to-outputs=order_cohorts",
+  "preview": null,
+  "preview_type": null,
+  "stats": {
+    "rows": 78,
+    "columns": 5,
+    "file_size": 2155
+  }
+}
