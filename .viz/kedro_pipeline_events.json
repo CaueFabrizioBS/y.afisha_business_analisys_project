@@ -1,7 +1,7 @@
 [
   {
     "event": "before_pipeline_run",
-    "timestamp": "2026-11-24T12:31:20.633062+00:00"
+    "timestamp": "2026-11-24T16:09:13.249218+00:00"
   },
   {
     "event": "after_dataset_loaded",
@@ -21,7 +21,7 @@
     "event": "after_node_run",
     "node": "clean_orders",
     "node_id": "7685b2e1",
-    "duration": 0.006388300000025993,
+    "duration": 0.02576930000213906,
     "status": "success"
   },
   {
@@ -29,7 +29,7 @@
     "dataset": "orders_clean",
     "node_id": "41ad8e34",
     "status": "Available",
-    "size": 2287465
+    "size": 2388295
   },
   {
     "event": "after_dataset_loaded",
@@ -42,7 +42,7 @@
     "event": "after_node_run",
     "node": "clean_visits",
     "node_id": "64b5c5d5",
-    "duration": 0.033512999999970816,
+    "duration": 0.05238749999261927,
     "status": "success"
   },
   {
@@ -50,20 +50,20 @@
     "dataset": "visits_clean",
     "node_id": "ce0f119c",
     "status": "Available",
-    "size": 27224267
+    "size": 27943065
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "visits_clean",
     "node_id": "ce0f119c",
     "status": "Available",
-    "size": 27224267
+    "size": 27943065
   },
   {
     "event": "after_node_run",
     "node": "audience_metrics",
     "node_id": "bf654662",
-    "duration": 0.41310090000001765,
+    "duration": 0.5772111999976914,
     "status": "success"
   },
   {
@@ -71,27 +71,27 @@
     "dataset": "product_metrics",
     "node_id": "c4248103",
     "status": "Available",
-    "size": 206
+    "size": 226
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "visits_clean",
     "node_id": "ce0f119c",
     "status": "Available",
-    "size": 27224267
+    "size": 27943065
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "orders_clean",
     "node_id": "41ad8e34",
     "status": "Available",
-    "size": 2287465
+    "size": 2388295
   },
   {
     "event": "after_node_run",
     "node": "build_buyers",
     "node_id": "bd02af53",
-    "duration": 0.22344410000005155,
+    "duration": 0.3744216999912169,
     "status": "success"
   },
   {
@@ -99,20 +99,20 @@
     "dataset": "buyers",
     "node_id": "c904099c",
     "status": "Available",
-    "size": 2837114
+    "size": 2910160
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "orders_clean",
     "node_id": "41ad8e34",
     "status": "Available",
-    "size": 2287465
+    "size": 2388295
   },
   {
     "event": "after_node_run",
     "node": "build_order_cohorts",
     "node_id": "b5e458a0",
-    "duration": 0.04583019999995486,
+    "duration": 0.07934430000022985,
     "status": "success"
   },
   {
@@ -120,20 +120,20 @@
     "dataset": "order_cohorts",
     "node_id": "c4fe211b",
     "status": "Available",
-    "size": 2155
+    "size": 2313
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "visits_clean",
     "node_id": "ce0f119c",
     "status": "Available",
-    "size": 27224267
+    "size": 27943065
   },
   {
     "event": "after_node_run",
     "node": "retention_by_cohort",
     "node_id": "8d206ac4",
-    "duration": 0.2781069000000116,
+    "duration": 0.4592419999971753,
     "status": "success"
   },
   {
@@ -141,7 +141,7 @@
     "dataset": "retention",
     "node_id": "31e69adf",
     "status": "Available",
-    "size": 702
+    "size": 728
   },
   {
     "event": "after_dataset_loaded",
@@ -155,13 +155,13 @@
     "dataset": "buyers",
     "node_id": "c904099c",
     "status": "Available",
-    "size": 2837114
+    "size": 2910160
   },
   {
     "event": "after_node_run",
     "node": "cac_by_source",
     "node_id": "43b053c9",
-    "duration": 0.00598980000006577,
+    "duration": 0.011157500004628673,
     "status": "success"
   },
   {
@@ -169,20 +169,20 @@
     "dataset": "cac_by_source",
     "node_id": "84e57b01",
     "status": "Available",
-    "size": 185
+    "size": 203
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "buyers",
     "node_id": "c904099c",
     "status": "Available",
-    "size": 2837114
+    "size": 2910160
   },
   {
     "event": "after_node_run",
     "node": "conversion_share",
     "node_id": "8a5460c0",
-    "duration": 0.005997999999976855,
+    "duration": 0.010450999994645827,
     "status": "success"
   },
   {
@@ -190,14 +190,14 @@
     "dataset": "conversion",
     "node_id": "21faa67d",
     "status": "Available",
-    "size": 84
+    "size": 96
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "buyers",
     "node_id": "c904099c",
     "status": "Available",
-    "size": 2837114
+    "size": 2910160
   },
   {
     "event": "after_dataset_loaded",
@@ -210,7 +210,7 @@
     "event": "after_node_run",
     "node": "device_revenue_test",
     "node_id": "29d33c7a",
-    "duration": 0.013815500000077918,
+    "duration": 0.046280800001113676,
     "status": "success"
   },
   {
@@ -218,20 +218,20 @@
     "dataset": "device_revenue_test",
     "node_id": "adf3e297",
     "status": "Available",
-    "size": 116
+    "size": 120
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "order_cohorts",
     "node_id": "c4fe211b",
     "status": "Available",
-    "size": 2155
+    "size": 2313
   },
   {
     "event": "after_node_run",
     "node": "ltv_by_cohort",
     "node_id": "754de81b",
-    "duration": 0.00813719999996465,
+    "duration": 0.013321399994310923,
     "status": "success"
   },
   {
@@ -239,14 +239,14 @@
     "dataset": "ltv",
     "node_id": "5088db2d",
     "status": "Available",
-    "size": 599
+    "size": 625
   },
   {
     "event": "after_dataset_loaded",
     "dataset": "order_cohorts",
     "node_id": "c4fe211b",
     "status": "Available",
-    "size": 2155
+    "size": 2313
   },
   {
     "event": "after_dataset_loaded",
@@ -259,7 +259,7 @@
     "event": "after_node_run",
     "node": "romi_by_cohort",
     "node_id": "0446e1e5",
-    "duration": 0.012799699999959557,
+    "duration": 0.02112930000294,
     "status": "success"
   },
   {
@@ -267,7 +267,7 @@
     "dataset": "romi_by_cohort",
     "node_id": "e20f4c88",
     "status": "Available",
-    "size": 585
+    "size": 611
   },
   {
     "event": "after_dataset_loaded",
@@ -281,13 +281,13 @@
     "dataset": "buyers",
     "node_id": "c904099c",
     "status": "Available",
-    "size": 2837114
+    "size": 2910160
   },
   {
     "event": "after_node_run",
     "node": "romi_by_source",
     "node_id": "30ad60b4",
-    "duration": 0.006215800000063609,
+    "duration": 0.01069429999915883,
     "status": "success"
   },
   {
@@ -295,10 +295,10 @@
     "dataset": "romi_by_source",
     "node_id": "90055bb0",
     "status": "Available",
-    "size": 207
+    "size": 225
   },
   {
     "event": "after_pipeline_run",
-    "timestamp": "2026-11-24T12:31:38.039777+00:00"
+    "timestamp": "2026-11-24T16:09:24.808281+00:00"
   }
 ]
